@@ -1,0 +1,173 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 4rem 4rem;
+}
+
+.section .imagesHolder {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.imagesHolder img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 300px;
+    gap: 10%;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--box-shadow2);
+}
+
+.bio {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+.bio p {
+    width: 90%;
+    font-size: 20px;
+    text-justify: inter-word;
+    margin-top: 100px;
+    line-height: 1.5;
+}
+.section ul {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap:20px ;
+    word-wrap: break-word;
+    max-width: 30%;
+   
+}
+
+.section  li {
+    display: flex;
+  font-size: 20px;
+  font-weight: 500;
+  color:var(--blue);
+  white-space: wrap;
+ width: 100%;
+ 
+  margin-top: 5px;
+  align-items: center;
+  list-style: none;
+}
+
+.books li:hover{
+    color: var(--magenta-800);
+}
+
+.section h4{
+    font-size: 20px;
+    color: var(--possitive);
+}
+
+.books {
+    display: flex;
+    gap: 20%;
+   width: 90%;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1600px){
+    .section {
+    width: 100%;
+    padding: 4rem 2rem;
+}
+
+
+.section .imagesHolder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.profile {
+   
+    width: 30%;
+    height: 300px;
+    font-size: 20px;
+   
+}
+
+.bio p {
+    width: 100%;
+    font-size: 18px;
+    text-justify: inter-word;
+    margin-top: 100px;
+    line-height: 1.2;
+}
+
+
+.section h4{
+    font-size: 16px;
+   
+}
+
+}
+
+@media only screen and (max-width: 600px) {
+    .section {
+        padding: 1rem;
+    }
+
+    
+.section .imagesHolder {
+    width: 100px;
+    height: 100px;
+  
+}
+
+.bio p {
+    width: 100%;
+    font-size: 12px;
+    text-justify: inter-word;
+    margin-top: 10px;
+    line-height: 1.2;
+}
+
+
+.profile {
+    width: 100%;
+    gap: 2%;
+    font-size: 18px;
+     height: 130px;
+    
+}
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 4px;
+}
+.books {
+    margin-top: 50px;
+    justify-content: start;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.section h4{
+    font-size: 14px;
+  
+}
+
+.section ul {
+   
+    max-width:  100%;
+   
+} .section li {
+    font-size: 16px;
+}
+}

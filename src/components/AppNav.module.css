@@ -1,0 +1,70 @@
+.nav{
+   display: flex; 
+   background-color: var(--informative-bg);
+   width: 100%;
+   gap: 20px;
+   padding: 10px 25px;
+}
+
+.nav ul  {
+   display: flex;
+   list-style: none;
+   justify-content: space-around;
+   width: 16%;
+   align-items: center;
+}
+.navLink{
+  font-size: 20px;
+  font-weight: 400;
+  padding: 4px 10px;
+  border-radius: 8px;
+  
+}
+
+
+
+.navLink a{
+  text-decoration: none;
+  color: var(--page-bg);
+  
+}
+
+.navLink a:hover{
+  color: var(--blue);
+}
+
+
+.navLink :global(.active){
+  color: var(--blue);
+}
+@media only screen and (max-width: 1600px) and (min-width: 601px){
+  
+.nav ul  {
+   display: flex;
+   list-style: none;
+   gap: 10%;
+   width: 28%;
+   align-items: center;
+}
+}
+@media only screen and (max-width: 600px) {
+  .nav{
+  
+   padding: 10px 0px;
+  
+}
+
+.nav ul  {
+   display: flex;
+   list-style: none;
+   justify-content: space-between;
+   width: 40%;
+   align-items: center;
+}
+.navLink{
+  font-size: 14px;
+  
+}
+
+
+}

@@ -1,0 +1,373 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0px 0px;
+    gap: 80px;
+    position: relative;
+    background: url(/public/output.png) var(--informative-bg) repeat   fixed;
+}
+
+.section {
+    display: flex;
+    width: 70%;
+    justify-self: center;
+    padding: 0px 0px;
+    background-color: #939fb3;
+    border-radius: 10px;
+    align-self: center;
+   padding: 0px;
+   justify-content: space-between;
+   
+}
+.last {
+    background-color: #8d8b89;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.last .summary {
+    background-color:#8d8b89;
+     
+}
+
+
+hr{
+  display:block;
+  margin:0 auto;
+  height:5px;
+  width:69%;
+  border:none;
+  border-radius: 3px;
+  border-left:15px solid var(  --negetive);
+  border-right:15px solid var(--alert);
+  animation: KITTAnim 1s infinite ease-in-out alternate;
+}
+
+hr:before{
+  content:" ";
+  display:inline-block;
+  width:15px;
+  height:15px;
+  border-left:15px solid var( --possitive);
+  border-right:15px solid var( --possitive);
+  animation: KITTAnimBefore 1s infinite ease-in-out alternate;
+}
+
+ hr:after{
+  content:" ";
+  display:inline-block;
+  width:15px;
+  height:15px;
+  border-left:15px solid var(--alert);
+  background-color:var(--alert);
+  border-right:15px solid var(--alert);
+  animation: KITTAnimAfter 2s infinite step-start alternate;
+}
+
+ hr:nth-child(even)
+{
+  animation:KITTAnimAfter 2s infinite step-start alternate;
+}
+
+hr:nth-child(even):after
+{
+  animation: KITTAnimAfter 2s infinite step-start alternate;
+}
+
+ hr:nth-child(even):before
+{
+  animation: KITTAnimAfter 2s infinite step-start alternate;
+}
+
+
+
+
+@keyframes KITTAnim {
+   0% {
+      background-color:var(--alert);
+      border-left:15px solid var(  --negetive);
+      border-right:15px solid var(--alert);
+   }
+   10% {
+      background-color:var(--alert);
+      border-left:15px solid var(  --negetive);
+      border-right:15px solid var(--alert);
+   }
+   20% {
+      background-color:var(--alert);
+      border-left:15px solid var( --possitive);
+      border-right:15px solid var(--alert);
+   }
+   30% {
+      background-color:var(--alert);
+      border-left:15px solid var(--blue);
+      border-right:15px solid var(--alert);
+   }
+   40% {
+      background-color:var(--alert);
+      border-left:15px solid var( --possitive);
+      border-right:15px solid var(--alert);
+   }
+   50% {
+      background-color:var( --possitive);
+      border-left:15px solid var(--alert);
+      border-right:15px solid var(--alert);
+   }
+   60% {
+      background-color:var(--blue);
+      border-left:15px solid var(--alert);
+      border-right:15px solid var( --possitive);
+   }
+   70% {
+      background-color: var(--negetive);
+      border-left:15px solid var(--alert);
+      border-right:15px solid var(--blue);
+   }
+   80% {
+      background-color:var(  --negetive);
+      border-left:15px solid var(--alert);
+      border-right:15px solid var( --possitive);
+   }
+   90% {
+      background-color: var(--negetive);
+      border-left:15px solid var(--alert);
+      border-right:15px solid var(  --negetive);
+   }
+   100% {
+      background-color: var(--negetive);
+      border-left:15px solid var(--alert);
+      border-right:15px solid var(  --negetive);
+   }
+}
+
+@keyframes KITTAnimBefore {
+   0% {
+      background-color:var(--blue);
+      border-left:15px solid var( --possitive);
+      border-right:15px solid var( --possitive);
+   }
+   10% {
+      background-color:var(--blue);
+      border-left:15px solid var( --possitive);
+      border-right:15px solid var( --possitive);
+   }
+   20% {
+      background-color: var(--negetive);
+      border-left:15px solid var(  --negetive);
+      border-right:15px solid var(--blue);
+   }
+   30% {
+      background-color:var(  --negetive);
+      border-left:15px solid var( --possitive);
+      border-right:15px solid var( --possitive);
+   }
+   40% {
+      background-color: var(--negetive);
+      border-left:15px solid var(--blue);
+      border-right:15px solid var(  --negetive);
+   }
+   50% {
+      background-color:var(--blue);
+      border-left:15px solid var( --possitive);
+      border-right:15px solid var( --possitive);
+   }
+   60% {
+      background-color:var( --possitive);
+      border-left:15px solid var(--alert);
+      border-right:15px solid var(--blue);
+   }
+   70% {
+      background-color:var(--alert);
+      border-left:15px solid var(--alert);
+      border-right:15px solid var( --possitive);
+   }
+   80% {
+      background-color:var(--alert);
+      border-left:15px solid var(--alert);
+      border-right:15px solid var(--alert);
+   }
+   90% {
+      background-color:var(--alert);
+      border-left:15px solid var(--alert);
+      border-right:15px solid var(--alert);
+   }
+   100% {
+      background-color:var(--alert);
+      border-left:15px solid var(--alert);
+      border-right:15px solid var(--alert);
+   }
+}
+
+@keyframes KITTAnimAfter {
+   0% {
+      background-color:var(--alert);
+      border-left:15px solid var(--alert);
+      border-right:15px solid var(--alert);
+   }
+   10% {
+      background-color:var(--alert);
+      border-left:15px solid var(--alert);
+      border-right:15px solid var(--alert);
+   }
+   20% {
+      background-color:var(--alert);
+      border-left:15px solid var( --possitive);
+      border-right:15px solid var(--alert);
+   }
+   30% {
+      background-color:var( --possitive);
+      border-left:15px solid var(--blue);
+      border-right:15px solid var(--alert);
+   }
+   40% {
+      background-color:var(--blue);
+      border-left:15px solid var( --possitive);
+      border-right:15px solid var( --possitive);
+   }
+   50% {
+      background-color: var(--negetive);
+      border-left:15px solid var(  --negetive);
+      border-right:15px solid var(--blue);
+   }
+   60% {
+      background-color:var(  --negetive);
+      border-left:15px solid var( --possitive);
+      border-right:15px solid var( --possitive);
+   }
+   70% {
+      background-color: var(--negetive);
+      border-left:15px solid var(--blue);
+      border-right:15px solid var(  --negetive);
+   }
+   80% {
+      background-color:var(--blue);
+      border-left:15px solid var( --possitive);
+      border-right:15px solid var( --possitive);
+   }
+   90% {
+      background-color:var( --possitive);
+      border-left:15px solid var(--alert);
+      border-right:15px solid var(--blue);
+   }
+   100% {
+      background-color:var( --possitive);
+      border-left:15px solid var(--alert);
+      border-right:15px solid var(--blue);
+   }
+}
+
+.section img{
+    border-radius: 10px 0 0 10px;
+   
+}
+.summary{
+    background-color: #939fb3;
+   font-size: 24px;
+   line-height: 1.5;
+   padding: 30px 60px;
+   border-radius: 10px ;
+   width: 45%;
+   color: var(--primaryA);
+   text-shadow: 2px 2px 4px #ffff;
+}
+
+.secound{
+   flex-direction: row-reverse;
+    background-color: var(--white);
+    padding: 2px;
+  
+}
+
+.secound .summary{
+    background-color: transparent;
+   
+}
+.shape {
+    display: flex;
+    width: 70%;
+    justify-self: center;
+    padding: 0px 0px;
+    border-radius: 10px;
+    align-self: center;
+   padding: 0px;
+   justify-content: center;
+  
+  position: relative;
+}
+
+.cercle{
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+0% {
+   
+    transform: rotate(0deg);
+}
+100% {
+    
+    transform: rotate(360deg);
+}
+}
+
+.mainPng{
+    position: absolute;
+    width: 28%;
+   bottom:23% ;
+
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1600px){
+
+.section {
+    width: 80%;
+    
+}
+.summary {
+   font-size: 16px;
+   width: 50%;
+   padding: 15px 5px;
+}
+
+.section img {
+   width: 300px;
+}
+
+
+}
+
+@media only screen and (max-width: 600px){ 
+.section {
+    
+    width: 100%;
+    flex-direction: column;
+   justify-content:center;
+   
+}
+
+.summary{
+    background-color: #939fb3;
+   font-size: 16px;
+   line-height: 1.2;
+   width: 100%;
+    padding: 15px 30px;
+  
+}
+
+.section img{
+    border-radius: 10px 0 0 10px;
+   width: 100%;
+   display: flex;
+   justify-self: center;
+}
+.cercle{
+   width: 90%;
+}
+.mainPng{
+    position: absolute;
+    width: 50%;
+   bottom:23% ;
+
+}
+
+}

@@ -1,0 +1,16 @@
+
+.box{
+  margin-top: 2.4rem;
+  height: calc(100vh - 7.2rem - 3 * 2.4rem);
+  display: flex;
+  justify-content: flex-start;
+  gap: 5%;
+  width: 98%;
+  
+}
+@media only screen and (max-width: 600px) {
+  .box{
+    width: 100%;
+    gap: 0px;
+  }
+}

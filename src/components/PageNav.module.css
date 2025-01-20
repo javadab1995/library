@@ -1,0 +1,160 @@
+.nav {
+  display: flex; 
+   width:60%;
+   gap: 400px;
+   padding: 10px 25px;
+   
+}
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  text-decoration: none;
+  width: 100%;
+  align-items: center;
+
+}
+
+.navLink{
+  font-size: 20px;
+  font-weight: 600;
+  
+}
+
+
+
+.navLink a{
+  text-decoration: none;
+  color: var(--page-bg);
+}
+
+.navLink a:hover{
+  color: var(--blue);
+}
+
+
+.navLink :global(.active){
+  color: var(--blue);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  background-color: #417c43;
+  max-height: 20px;
+  border-radius: 10px;
+}
+
+
+.btn a {
+    list-style: none;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    display: flex;
+   margin-bottom: 15px;
+   color: var(--accent100);
+    
+}
+
+.btn:hover {
+ background-color: #6ed070;
+  
+}
+.btn:hover a{
+  background-color: #6ed070;
+}
+
+@media only screen and (max-width: 1500px) and (min-width: 601px) {
+  .nav {
+    display: flex;
+    width: 80%; 
+    justify-content: space-between;
+    gap: 200px; 
+    padding: 5px 15px; 
+    margin-top: 10px;
+  }
+
+  .nav ul {
+   
+    align-items: center; 
+    gap: 20px; 
+  }
+
+  .navLink {
+    font-size: 18px;
+   
+  }
+
+  
+
+  
+
+}
+
+
+@media only screen and (max-width: 600px) {
+  .nav {
+  display: flex; 
+   width:100%;
+   justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 100px;
+    padding: 2px;
+}
+.nav ul  {
+  justify-content: space-between;
+  
+}
+
+.navLink{
+  font-size: 16px;
+  font-weight: 600;
+  
+}
+
+
+
+.navLink a{
+  text-decoration: none;
+  color: var(--nav-bar-box-shadow);
+}
+
+.navLink a:hover{
+  color: var(--blue);
+}
+
+
+.navLink :global(.active){
+  color: var(--blue);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  background-color: #417c43;
+  max-height: 20px;
+  border-radius: 10px;
+}
+
+
+.btn a {
+    list-style: none;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+   margin-bottom: 15px;
+   color: var(--accent100);
+    
+}
+
+.btn:hover {
+ background-color: #6ed070;
+  
+}
+.btn:hover a{
+  background-color: #6ed070;
+}
+
+ }

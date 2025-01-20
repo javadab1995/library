@@ -1,0 +1,38 @@
+.login {
+  background-color: var(--informative-bg);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form {
+  background-color:var(--icon-active) ;
+  border-radius: 7px;
+  padding: 8rem 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 20px;
+  width: 68rem;
+  margin: 8rem auto;
+  color: var(--primaryA);
+}
+@media only screen and (max-width: 600px) {
+
+.form {
+  background-color:var(--icon-active) ;
+  border-radius: 7px;
+  padding: 4rem 19rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  width: 50%;
+  color: var(--primaryA);
+}
+
+
+}

@@ -1,0 +1,89 @@
+
+.details{
+    width: 70%;
+    background-color: var(--labels);
+    border-radius: 0.9rem;
+    overflow-y: scroll;
+    position: relative;
+    justify-self: end;
+    padding: 30px 45px;
+}
+
+.details span{
+  font-size: 20px;
+  font-weight: 500;
+  color:#417c43;
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  align-items: center;
+}
+
+.details::-webkit-scrollbar{
+ display: none;
+}
+
+.nav {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 10px;
+  justify-self: flex-start;
+ 
+}
+
+.nav li {
+  list-style: none;
+  display: flex;
+  border: 1px solid var(--icon-active);
+  border-radius: 8px;
+  width: 100%;
+  color: var(--page-bg);
+  
+  
+}
+
+.nav a:link,
+.nav a:visited {
+  display: block;
+  color: (--primaryC);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 2.3rem;
+  font-weight: 400;
+  padding: 8px 32px;
+  border-radius: 4px;
+}
+
+/* CSS Modules feature */
+.nav a:global(.active) {
+ border-radius: 4px;
+ 
+  
+    background-color: var(--bgFilledBtnHover);
+  color:var(--labels);
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1600px){
+  .details{
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  
+.nav a:link,
+.nav a:visited {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 4px 16px;
+  
+}
+
+
+.details{
+    width: 60%;
+    padding:2px;
+}
+
+}
