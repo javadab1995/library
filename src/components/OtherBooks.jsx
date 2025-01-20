@@ -1,4 +1,4 @@
-import styles from './otherBooks.module.css'
+import styles from './OtherBooks.module.css'
 function OtherBooks({ book }) {
   return (
     <div className={styles.cart}>
