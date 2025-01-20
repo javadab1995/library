@@ -46,7 +46,7 @@ function BookProvider({ children }) {
         async function fetchBooks() {
           dispatch({type : "loading"})
           try {
-            const res = await fetch(`http://localhost:9000/books`);
+            const res = await fetch(`/api/books`);
             const data = await res.json();
 
             dispatch({type: "books/loaded" , paylod: data});
