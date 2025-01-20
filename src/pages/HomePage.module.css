@@ -36,7 +36,7 @@
 
 @media only screen and (min-width: 601px) and (max-width: 1600px) {
   .main {
-    background: url(../public/backbookT.jpg) no-repeat center;
+    background: url(../../public/backbookT.jpg) no-repeat center;
     background-size: cover; 
     flex-direction: column; 
   }
@@ -45,7 +45,7 @@
     width: 60%; 
     padding: 30px 40px;
     margin-top: 100px;
-    gap: 80px; 
+    gap: 40px; 
     line-height: 4rem; 
   }
   
@@ -74,7 +74,7 @@
 .main {
   flex-direction: column;
  
-  background: url(../public/backbook.jpg) no-repeat left ;
+  background: url(../../public/backbook.jpg) no-repeat left ;
  
 } 
 
