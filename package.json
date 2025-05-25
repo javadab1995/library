@@ -9,7 +9,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "json-server --watch data/book.json --port 9000 --cors"
+    "server": "json-server --watch data/book.json --port 9000",
+    "json-server": "json-server --watch data/book.json --port 9000"
+
   },
   "dependencies": {
     "json-server": "^1.0.0-beta.3",
