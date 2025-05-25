@@ -1,9 +1,10 @@
 import styles from './OtherBooks.module.css'
 function OtherBooks({ book }) {
+  
   return (
     <div className={styles.cart}>
       <div className={styles.bookProfile}>
-        {book.image && <img src={book.image} alt={book.name} />}
+       
       </div>
       <div>
         <HighlightText text={book.description} keyword={book.name} />

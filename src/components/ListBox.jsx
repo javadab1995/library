@@ -4,7 +4,8 @@ import Spinner from "./Spinner.jsx";
 
 
 function ListBox({searchQuery }) {
- const { books, dispatch, selectedItem, isLoading } = useBooks();
+  const { books, dispatch, selectedItem, isLoading } = useBooks();
+ 
   const searchBook = books.filter(book => book.name.includes(searchQuery));
 
   if(isLoading) return <Spinner />
@@ -17,7 +18,7 @@ function ListBox({searchQuery }) {
              book.id === selectedItem?.id ? "select" : ""
             }`}
             key={book.id}
-            onClick={() => dispatch({ type: "book/loaded", paylod: book })}
+            onClick={() => dispatch({ type: "book/loaded", payload: book })}
           >
             <div className={styles.imageHolder}>
               <img src={book.image} alt={book.name} />

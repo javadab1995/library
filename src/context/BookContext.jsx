@@ -1,83 +1,70 @@
+/* eslint-disable react-refresh/only-export-components */
+
 import { createContext, useContext, useEffect, useReducer } from "react";
 
 const initialState = {
-  books:[],
-  isLoding:false,
+  books: [],
+  isLoading: false,
   selectedItem: null,
-}
+};
 
 function reducer(state, action) {
   switch (action.type) {
     case "loading":
       return {
         ...state,
-        isLoding: true,
+        isLoading: true,
       };
     case "books/loaded":
       return {
         ...state,
-        isLoadig: false,
-        books: action.paylod,
+        isLoading: false,
+        books: action.payload,
       };
     case "book/loaded":
       return {
         ...state,
-        isLoadig: false,
-        selectedItem: action.paylod,
+        selectedItem: action.payload,
       };
     case "rejected":
-      return {
-        initialState,
-      };
-
+      return initialState;
     default:
       throw new Error("Unknown action type");
   }
 }
+
 const BookContext = createContext();
-function BookProvider({ children }) {
-      // const [books, setBooks] = useState([]);
-      // const [isLoadig, setIsLoding] = useState(false);
-  // const [selectedItem, setSelectedItem] = useState(null);
-  
-  const [{ books, isLoadig, selectedItem }, dispatch] = useReducer(reducer, initialState);
 
-      useEffect(function () {
-        async function fetchBooks() {
-          dispatch({type : "loading"})
-          try {
-            const res = await fetch(`/api/books`);
-            const data = await res.json();
+export function BookProvider({ children }) {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-            dispatch({type: "books/loaded" , paylod: data});
-           
-          } catch {
-            console.log("data is not fetched");
-          } 
-        }
-        fetchBooks();
-      }, []);
+  useEffect(() => {
+    async function fetchBooks() {
+      dispatch({ type: "loading" });
+      try {
+        const res = await fetch("../../data/book.json");
+        const data = await res.json();
+        dispatch({ type: "books/loaded", payload: data.books });
+      } catch {
+        dispatch({ type: "rejected" });
+      }
+    }
+    fetchBooks();
+  }, []);
 
-      return (
-        <BookContext.Provider
-          value={{
-            books,
-            isLoadig,
-            selectedItem,
-            dispatch
-          }}
-        >
-          {children}
-        </BookContext.Provider>
-      );
+  return (
+    <BookContext.Provider value={{ ...state, dispatch }}>
+      {children}
+    </BookContext.Provider>
+  );
 }
 
-function useBooks() {
-  const context = useContext(BookContext)
-  return context
+export function useBooks() {
+  const context = useContext(BookContext);
+  if (!context) {
+    throw new Error("useBooks must be used within a BookProvider");
+  }
+  return context;
 }
 
-
-// eslint-disable-next-line react-refresh/only-export-components
-export {BookProvider, useBooks}
 

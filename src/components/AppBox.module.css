@@ -8,9 +8,33 @@
   width: 98%;
   
 }
+
+.arrows{
+  display: none;
+}
 @media only screen and (max-width: 600px) {
+
   .box{
     width: 100%;
-    gap: 0px;
+    flex-direction: column;
+    align-items: center;
+  }
+.arrows{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 140px;
+ z-index: 100;
+}
+  .arrow{
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: var(--white);
+     background-color: var(--accent700);
+     border: none;
+     border-radius: 10px;
   }
 }

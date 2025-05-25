@@ -4,13 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run vite\" \"npm run json-server\"",
+    "dev": "npm run vite",
     "vite": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "server": "json-server --watch data/book.json --port 9000",
-    "json-server": "json-server --watch data/book.json --port 9000"
+    "preview": "vite preview"
 
   },
   "dependencies": {

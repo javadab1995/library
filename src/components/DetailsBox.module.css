@@ -67,6 +67,7 @@
 @media only screen and (min-width: 601px) and (max-width: 1600px){
   .details{
     padding: 10px;
+  
   }
 }
 
@@ -82,7 +83,9 @@
 
 
 .details{
-    width: 60%;
+    width: 90%;
+    justify-self: center;
+    align-self: center;
     padding:2px;
 }
 
