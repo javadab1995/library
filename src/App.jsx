@@ -10,6 +10,7 @@ import BookInfo from "./components/BookInfo";
 import WriterInfo from "./components/WriterInfo";
 import {BookProvider} from "./context/BookContext.jsx";
 import ProtectedRoute from "./pages/ProtectedRoute.jsx";
+import Try from "./pages/Try.jsx";
 
 
  
@@ -21,6 +22,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomPage />} />
+            <Route path="try" element={<Try />} />
             <Route path="login" element={<Login />} />
             <Route path="blog" element={<Blog />}>
               <Route path="singleBlog" />
