@@ -1,0 +1,243 @@
+.main {
+  width: 100%;
+  min-height: 60vh;
+  padding: 44px 0 72px;
+  box-sizing: border-box;
+  background: var(--color-background, #f6f1e8);
+  direction: rtl;
+}
+
+.pageHeader {
+  width: min(100% - 48px, 1160px);
+  margin: 0 auto 32px;
+}
+
+.pageHeader h1 {
+  margin: 0 0 8px;
+  color: var(--color-primary, #35483a);
+  font-size: clamp(1.65rem, 2.8vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.7;
+}
+
+.pageHeader p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--color-text-secondary, #777467);
+  font-size: 0.95rem;
+  line-height: 2;
+}
+
+.blogBox {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+  width: min(100% - 48px, 1160px);
+  margin-inline: auto;
+}
+
+.blogCard {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-divider, #e8e0d3);
+  border-radius: 10px;
+  background: var(--color-surface, #fffcf6);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.blogCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-border, #d9cfbf);
+  box-shadow: 0 8px 22px rgb(53 72 58 / 8%);
+}
+
+.imageLink {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--color-background, #f6f1e8);
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 240ms ease;
+}
+
+.blogCard:hover .image {
+  transform: scale(1.025);
+}
+
+.info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  min-width: 0;
+  padding: 18px;
+}
+
+.title {
+  min-height: 3.4em;
+  margin: 0;
+  color: var(--color-primary, #35483a);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  transition: color 180ms ease;
+}
+
+.blogCard:hover .title {
+  color: var(--color-accent, #6f7650);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin: 0;
+  padding: 0;
+  color: var(--color-text-secondary, #777467);
+  font-size: 0.8rem;
+  line-height: 1.8;
+  list-style: none;
+}
+
+.meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.meta li span,
+.meta time {
+  overflow-wrap: anywhere;
+}
+
+.meta svg {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  color: var(--color-accent, #6f7650);
+}
+
+.readMore {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-divider, #e8e0d3);
+  color: var(--color-primary, #35483a);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.8;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.readMore:hover {
+  color: var(--color-accent, #6f7650);
+}
+
+.readMore svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  transition: transform 180ms ease;
+}
+
+.readMore:hover svg {
+  transform: translateX(-3px);
+}
+
+.imageLink:focus-visible,
+.readMore:focus-visible {
+  outline: 2px solid var(--color-accent, #6f7650);
+  outline-offset: -3px;
+}
+
+@media (max-width: 1000px) {
+  .blogBox {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .info {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding-block: 28px 44px;
+  }
+
+  .pageHeader {
+    width: calc(100% - 32px);
+    margin-bottom: 24px;
+  }
+
+  .pageHeader h1 {
+    font-size: 1.55rem;
+  }
+
+  .pageHeader p {
+    font-size: 0.88rem;
+  }
+
+  .blogBox {
+    width: calc(100% - 32px);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .imageLink {
+    aspect-ratio: 16 / 9;
+  }
+
+  .info {
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .title {
+    min-height: 0;
+    font-size: 1rem;
+  }
+
+  .meta {
+    font-size: 0.78rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blogCard,
+  .image,
+  .title,
+  .readMore,
+  .readMore svg {
+    transition: none;
+  }
+
+  .blogCard:hover,
+  .blogCard:hover .image,
+  .readMore:hover svg {
+    transform: none;
+  }
+}

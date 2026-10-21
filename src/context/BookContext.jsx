@@ -42,9 +42,7 @@ export function BookProvider({ children }) {
     async function fetchBooks() {
       dispatch({ type: "loading" });
       try {
-        const res = await fetch("/data/book.json");
-        console.log("Status:", res.status);
-        console.log("Content-Type:", res.headers.get("content-type"));
+        const res = await fetch("/data/books.json");
         const data = await res.json();
         dispatch({ type: "books/loaded", payload: data.books });
       } catch {

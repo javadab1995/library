@@ -1,0 +1,251 @@
+.main {
+  --about-max-width: 1120px;
+
+  width: 100%;
+  min-height: 100vh;
+  padding: 52px 24px 24px;
+  background: var(--color-background, #f6f1e8);
+  color: var(--color-primary, #35483a);
+}
+
+.intro {
+  width: min(100%, var(--about-max-width));
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--color-accent, #6f7650);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.pageTitle {
+  margin: 0;
+  color: var(--color-primary, #35483a);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.introText {
+  max-width: 540px;
+  margin: 12px auto 0;
+  color: var(--color-text-secondary, #777467);
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: min(100%, var(--about-max-width));
+  margin-inline: auto;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(240px, 0.9fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 64px);
+
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px solid var(--color-divider, #e8e0d3);
+  border-radius: 16px;
+  background: var(--color-surface, #fffcf6);
+  box-shadow: 0 4px 18px rgb(53 72 58 / 4%);
+}
+
+.reverse .summary {
+  order: 2;
+}
+
+.reverse .imageHolder {
+  order: 1;
+}
+
+.summary {
+  min-width: 0;
+}
+
+.summary .eyebrow {
+  margin-bottom: 8px;
+}
+
+.sectionTitle {
+  margin: 0 0 18px;
+  color: var(--color-primary, #35483a);
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  font-weight: 750;
+  line-height: 1.8;
+}
+
+.summary p {
+  margin: 0;
+  color: var(--color-text-secondary, #777467);
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 2.25;
+  text-align: justify;
+  text-align-last: right;
+  overflow-wrap: anywhere;
+}
+
+.imageHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 240px;
+  padding: 12px;
+}
+
+.imageHolder img {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  max-height: 320px;
+  object-fit: contain;
+  transition: transform 220ms ease;
+}
+
+.section:hover .imageHolder img {
+  transform: translateY(-3px);
+}
+
+.visualSection {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 800px);
+  margin: 24px auto 0;
+  padding: 32px 0 48px;
+}
+
+.circle {
+  display: block;
+  width: min(62%, 420px);
+  height: auto;
+  object-fit: contain;
+  animation: rotateShape 40s linear infinite;
+}
+
+.mainImage {
+  position: absolute;
+  left: 50%;
+  bottom: 17%;
+  display: block;
+  width: min(26%, 180px);
+  height: auto;
+  object-fit: contain;
+  transform: translateX(-50%);
+}
+
+@keyframes rotateShape {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 760px) {
+  .main {
+    padding: 36px 16px 16px;
+  }
+
+  .intro {
+    margin-bottom: 28px;
+  }
+
+  .introText {
+    max-width: 420px;
+    font-size: 0.93rem;
+  }
+
+  .sections {
+    gap: 16px;
+  }
+
+  .section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    padding: 24px;
+    border-radius: 12px;
+  }
+
+  .reverse .summary,
+  .reverse .imageHolder {
+    order: initial;
+  }
+
+  .summary p {
+    font-size: 0.94rem;
+    line-height: 2.15;
+    text-align: right;
+  }
+
+  .sectionTitle {
+    margin-bottom: 12px;
+  }
+
+  .imageHolder {
+    min-height: 0;
+    padding: 8px 0 0;
+  }
+
+  .imageHolder img {
+    width: 100%;
+    max-width: 280px;
+    max-height: 230px;
+  }
+
+  .visualSection {
+    margin-top: 12px;
+    padding-block: 12px 32px;
+  }
+
+  .circle {
+    width: 78%;
+  }
+
+  .mainImage {
+    bottom: 15%;
+    width: 42%;
+  }
+}
+
+@media (max-width: 400px) {
+  .main {
+    padding-inline: 12px;
+  }
+
+  .section {
+    padding: 20px 18px;
+  }
+
+  .pageTitle {
+    font-size: 1.75rem;
+  }
+
+  .summary p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .circle {
+    animation: none;
+  }
+
+  .imageHolder img {
+    transition: none;
+  }
+}

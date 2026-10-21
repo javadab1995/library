@@ -1,0 +1,7 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  padding-bottom: 64px;
+  background-color: var(--color-background);
+}

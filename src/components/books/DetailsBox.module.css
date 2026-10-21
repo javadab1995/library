@@ -1,0 +1,127 @@
+
+.details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: clamp(16px, 2.5vw, 28px);
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border, #d9cfbf) transparent;
+  background: var(--color-surface, #fffcf6);
+  color: var(--color-primary, #35483a);
+  border-radius: 12px;
+  direction: rtl;
+}
+
+.details > * {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.details img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin: 0 0 24px;
+  padding: 0 0 12px;
+  border-bottom: 1px solid var(--color-divider, #e8e0d3);
+  list-style: none;
+}
+
+.nav li {
+  min-width: 0;
+}
+
+.nav a:link,
+.nav a:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 8px 18px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  color: var(--color-text-secondary, #77766e);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.nav a:hover {
+  background: var(--color-background, #f6f1e8);
+  color: var(--color-primary, #35483a);
+}
+
+.nav a:global(.active) {
+  border-color: var(--color-border, #d9cfbf);
+  background: var(--color-primary, #35483a);
+  color: #fffcf6;
+}
+
+.nav a:focus-visible {
+  outline: 2px solid var(--color-accent, #6f7650);
+  outline-offset: 3px;
+}
+
+.details p {
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.details h1,
+.details h2,
+.details h3 {
+  max-width: 100%;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .details {
+    height: auto;
+    min-height: 300px;
+    padding: 16px;
+    overflow: visible;
+    border-radius: 10px;
+  }
+
+  .nav {
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+
+  .nav a:link,
+  .nav a:visited {
+    min-height: 38px;
+    padding: 7px 14px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav a:link,
+  .nav a:visited {
+    transition: none;
+  }
+}

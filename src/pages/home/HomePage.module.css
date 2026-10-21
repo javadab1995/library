@@ -1,0 +1,162 @@
+
+.main {
+  --hero-text: var(--color-surface);
+
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgb(20 34 27 / 82%) 0%,
+      rgb(20 34 27 / 65%) 45%,
+      rgb(20 34 27 / 20%) 100%
+    ),
+    url("/images/bg.jpg") center / cover no-repeat;
+}
+
+.section {
+  width: min(100% - 48px, 1200px);
+  margin-inline: auto;
+  margin-block: auto;
+  padding-block: clamp(64px, 10vh, 120px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+
+  direction: rtl;
+  text-align: right;
+}
+
+.section h1 {
+  max-width: 760px;
+  margin: 0;
+
+  color: var(--hero-text);
+  font-size: clamp(2rem, 4.2vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.65;
+  text-wrap: balance;
+}
+
+.section p {
+  max-width: 590px;
+  margin: 0;
+
+  color: rgb(255 250 240 / 88%);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 400;
+  line-height: 2.1;
+}
+
+.section a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  min-width: 180px;
+  min-height: 48px;
+  padding: 12px 28px;
+
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md, 10px);
+
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.section a:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.section a:focus-visible {
+  outline: 3px solid #E8C79B;
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .main {
+    background:
+      linear-gradient(
+        90deg,
+        rgb(20 34 27 / 32%),
+        rgb(20 34 27 / 18%)
+      ),
+      url("/images/bg.jpg") 58% center / cover no-repeat;
+  }
+
+  .section {
+    width: calc(100% - 40px);
+    gap: 22px;
+    padding-block: 72px;
+  }
+
+  .section h1 {
+    max-width: 560px;
+    font-size: clamp(1.8rem, 5.5vw, 2.5rem);
+    line-height: 1.7;
+  }
+
+  .section p {
+    max-width: 520px;
+    font-size: 1rem;
+    line-height: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    background:
+      linear-gradient(
+        90deg,
+        rgb(20 34 27 / 33%),
+        rgb(20 34 27 / 11%)
+      ),
+      url("/backbook.jpg") 58% center / cover no-repeat;
+  }
+
+  .section {
+    width: calc(100% - 36px);
+    padding-block: 56px;
+    gap: 20px;
+  }
+
+  .section h1 {
+    font-size: 1.75rem;
+    line-height: 1.8;
+  }
+
+  .section p {
+    font-size: 0.95rem;
+    line-height: 2.1;
+  }
+
+  .section a {
+    width: 100%;
+    min-height: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section a {
+    transition: none;
+  }
+}

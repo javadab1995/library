@@ -1,0 +1,138 @@
+.page {
+  display: grid;
+  place-items: center;
+  width: min(100% - 40px, 900px);
+  min-height: 65vh;
+  margin: 0 auto;
+  padding: 48px 0 64px;
+  color: var(--color-primary, #35483a);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 560px;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 22px;
+  border: 1px solid var(--color-border, #d9cfbf);
+  border-radius: 18px;
+  background: var(--color-surface, #fffcf6);
+  font-size: 32px;
+}
+
+.code {
+  margin: 0;
+  color: var(--color-accent, #6f7650);
+  font-size: clamp(3.5rem, 10vw, 6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 3px;
+}
+
+.content h1 {
+  margin: 16px 0 10px;
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  line-height: 1.7;
+}
+
+.description {
+  max-width: 440px;
+  margin: 0;
+  color: var(--color-text-secondary, #777467);
+  font-size: 0.95rem;
+  line-height: 2;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 0 17px;
+  border: 1px solid var(--color-primary, #35483a);
+  border-radius: 7px;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.primaryButton {
+  background: var(--color-primary, #35483a);
+  color: var(--color-surface, #fffcf6);
+}
+
+.primaryButton:hover {
+  border-color: var(--color-primary-hover, #25352d);
+  background: var(--color-primary-hover, #25352d);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: var(--color-primary, #35483a);
+}
+
+.secondaryButton:hover {
+  background: var(--color-surface, #fffcf6);
+}
+
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible {
+  outline: 2px solid var(--color-accent, #6f7650);
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .page {
+    width: calc(100% - 24px);
+    min-height: 60vh;
+  }
+
+  .content {
+    padding: 32px 8px;
+  }
+
+  .actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryButton,
+  .secondaryButton {
+    transition: none;
+  }
+}

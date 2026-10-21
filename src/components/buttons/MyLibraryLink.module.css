@@ -1,0 +1,43 @@
+.libraryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-self: end;
+  gap: 0.6rem;
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--color-border, #D9CFBF);
+  border-radius: var(--radius-md, 10px);
+  color: var(--color-primary, #35483A);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.libraryButton svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.libraryButton:hover {
+  border-color: var(--color-primary, #35483A);
+  background-color: var(--color-surface, #FFFCF6);
+}
+
+.libraryButton:focus-visible {
+  outline: 2px solid var(--color-accent, #6f7650);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .libraryButton {
+    transition: none;
+  }
+
+  .libraryButton:hover {
+    transform: none;
+  }
+}

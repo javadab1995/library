@@ -1,0 +1,250 @@
+
+.footer {
+  width: 100%;
+  background-color: var(--color-primary, #35483A);
+  color: var(--color-surface, #FFFCF6);
+  direction: rtl;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0.9fr 1.15fr 0.75fr;
+  align-items: start;
+  gap: 56px;
+  width: min(100% - 64px, 1200px);
+  margin-inline: auto;
+  padding-block: 56px 48px;
+}
+
+.about,
+.faq,
+.contact {
+  min-width: 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: var(--color-surface, #FFFCF6);
+  font-size: 1.45rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.brand img {
+  display: block;
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.about > p {
+  max-width: 360px;
+  margin: 0;
+  color: var(--color-surface, #FFFCF6);
+  opacity: 0.76;
+  font-size: 0.9rem;
+  line-height: 2.2;
+}
+
+.heading {
+  margin: 0 0 22px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid rgb(255 252 246 / 20%);
+  color: var(--color-surface, #FFFCF6);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faqItem {
+  overflow: hidden;
+  border-bottom: 1px solid rgb(255 252 246 / 17%);
+}
+
+.faqItem:first-child {
+  border-top: 1px solid rgb(255 252 246 / 17%);
+}
+
+.faqItem summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 2px;
+  color: var(--color-surface, #FFFCF6);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.9;
+  list-style: none;
+  cursor: pointer;
+}
+
+.faqItem summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqItem summary::after {
+  content: "+";
+  flex-shrink: 0;
+  color: var(--color-leather, #A46B47);
+  font-size: 1.25rem;
+  font-weight: 400;
+  transition: transform 180ms ease;
+}
+
+.faqItem[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faqItem[open] summary {
+  color: var(--color-surface, #FFFCF6);
+}
+
+.faqItem > p {
+  margin: 0;
+  padding: 0 2px 16px;
+  color: var(--color-surface, #FFFCF6);
+  opacity: 0.72;
+  font-size: 0.85rem;
+  line-height: 2.1;
+}
+
+.faqItem summary:focus-visible,
+.contactList a:focus-visible,
+.brand:focus-visible {
+  outline: 2px solid var(--color-surface, #FFFCF6);
+  outline-offset: 4px;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contactList li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.contactLabel {
+  color: var(--color-surface, #FFFCF6);
+  opacity: 0.6;
+  font-size: 0.8rem;
+}
+
+.contactList a {
+  width: fit-content;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  color: var(--color-surface, #FFFCF6);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.contactList a:hover {
+  color: var(--color-leather, #A46B47);
+}
+
+.bottom {
+  border-top: 1px solid rgb(255 252 246 / 20%);
+  padding: 19px 24px;
+  text-align: center;
+}
+
+.bottom p {
+  margin: 0;
+  color: var(--color-surface, #FFFCF6);
+  opacity: 0.65;
+  font-size: 0.8rem;
+  line-height: 1.9;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 32px;
+    width: calc(100% - 48px);
+  }
+
+  .about {
+    grid-column: 1 / -1;
+  }
+
+  .about > p {
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 34px;
+    width: calc(100% - 36px);
+    padding-block: 36px 30px;
+  }
+
+  .about {
+    grid-column: auto;
+  }
+
+  .brand {
+    margin-bottom: 14px;
+    font-size: 1.3rem;
+  }
+
+  .brand img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .about > p {
+    font-size: 0.875rem;
+    line-height: 2.1;
+  }
+
+  .heading {
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    font-size: 1.05rem;
+  }
+
+  .faqItem summary {
+    padding-block: 13px;
+    font-size: 0.84rem;
+  }
+
+  .faqItem > p {
+    font-size: 0.82rem;
+  }
+
+  .contactList {
+    gap: 18px;
+  }
+
+  .bottom {
+    padding: 15px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faqItem summary::after,
+  .contactList a {
+    transition: none;
+  }
+}
